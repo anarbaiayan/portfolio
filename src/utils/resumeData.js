@@ -91,7 +91,7 @@ const resumeData = {
       icon: <CodeIcon />
     },
   ],
-  skills:[
+  skills: [
     {
       title: "Frontend",
       description: ["JavaScript", "React", "TypeScript", "Material UI", "Bootstrap"],
@@ -107,7 +107,79 @@ const resumeData = {
     {
       title: "Source Control",
       description: ["Git", "GitHub"],
-    } 
+    }
+  ],
+  projects: [
+    {
+      tag: "React",
+      background: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+      title: " React Project 1",
+      caption: "A short description.",
+      description: "A sample project built with React.",
+      links: [
+        {
+          link: "https://portfolio-o6xg.onrender.com/", icon: <WebOutlined />, text: "Live Demo"
+        },
+        {
+          link: "https://portfolio-o6xg.onrender.com/", icon: <GitHubIcon />, text: "Live Demo"
+        },
+        {
+          link: "https://portfolio-o6xg.onrender.com/", icon: <CodeIcon />, text: "Live Demo"
+        }
+      ]
+    },
+    {
+      tag: "React",
+      background: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+      title: "React Project 2",
+      caption: "A short description.",
+      description: "A sample project built with React.",
+      links: [
+        {
+          link: "https://portfolio-o6xg.onrender.com/", icon: <WebOutlined />, text: "Live Demo"
+        },
+        {
+          link: "https://portfolio-o6xg.onrender.com/", icon: <GitHubIcon />, text: "Live Demo"
+        },
+        {
+          link: "https://portfolio-o6xg.onrender.com/", icon: <CodeIcon />, text: "Live Demo"
+        }
+      ]
+    },{
+      tag: "React, Node.js",
+      background: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+      title: "React Project 3",
+      caption: "A short description.",
+      description: "A sample project built with React.",
+      links: [
+        {
+          link: "https://portfolio-o6xg.onrender.com/", icon: <WebOutlined />, text: "Live Demo"
+        },
+        {
+          link: "https://portfolio-o6xg.onrender.com/", icon: <GitHubIcon />, text: "Live Demo"
+        },
+        {
+          link: "https://portfolio-o6xg.onrender.com/", icon: <CodeIcon />, text: "Live Demo"
+        }
+      ]
+    },{
+      tag: "JS",
+      background: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+      title: "JS Project 1",
+      caption: "A short description.",
+      description: "A sample project built with React.",
+      links: [
+        {
+          link: "https://portfolio-o6xg.onrender.com/", icon: <WebOutlined />, text: "Live Demo"
+        },
+        {
+          link: "https://portfolio-o6xg.onrender.com/", icon: <GitHubIcon />, text: "Live Demo"
+        },
+        {
+          link: "https://portfolio-o6xg.onrender.com/", icon: <CodeIcon />, text: "Live Demo"
+        }
+      ]
+    },
   ]
 };
 
