@@ -3,6 +3,7 @@ import Tabs from '@mui/material/Tabs'
 import { useState } from 'react'
 import Tab from '@mui/material/Tab';
 import resumeData from '../../utils/resumeData';
+import { styled } from '@mui/material/styles';
 import { Card, CardActionArea, CardContent, CardMedia, Dialog, DialogActions, DialogContent, DialogTitle, Grow, Typography } from '@mui/material';
 
 const Portfolio = () => {
@@ -10,46 +11,108 @@ const Portfolio = () => {
   const [tabValue, setTabValue] = useState("All");
   const [openDialog, setOpenDialog] = useState(false);
 
+  const CustomTabs = styled(Tabs)({
+    '& .MuiTabs-indicator': {
+      backgroundColor: 'white',
+    },
+  });
+
+  const CustomTab = styled(Tab)(({ theme }) => ({
+    padding: 0,
+    minWidth: 0,
+    marginRight: 20,
+    textTransform: 'inherit',
+    fontSize: 14,
+    fontWeight: 400,
+    outlineWidth: 0,
+    color: 'inherit',
+    '&.Mui-selected': {
+      color: 'var(--main-color)',
+    },
+  }));
+
+  const CustomCard = styled(Card)({
+    height: '100%',
+    maxWidth: '350px',
+    boxShadow: '0px 6px 48px 0px rgba(4, 6, 4, 0.08)',
+    borderRadius: '5px',
+    overflow: 'hidden',
+    outlineWidth: '0px',
+  });
+
+  const CustomCardMedia = styled(CardMedia)({
+    height: '140px',
+  });
+
+  const CustomCardTitle = styled(Typography)({
+    fontWeight: 500,
+  });
+
+  const ProjectDialogImage = styled('img')({
+    maxHeight: '300px',
+    width: '100%',
+    objectFit: 'cover',
+    objectPosition: 'center center',
+  });
+
+  const ProjectDialogDescription = styled(Typography)({
+    marginTop: '10px',
+  });
+
+  const ProjectDialogActions = styled(DialogActions)({
+    justifyContent: 'center',
+    marginBottom: '10px',
+  });
+
+  const ProjectDialogIcon = styled('a')({
+    color: 'darkslategray',
+    margin: '0px 12px',
+    cursor: 'pointer',
+  });
+
+
+
 
   return (
-    <Grid container className="section" sx={{ paddingBottom: '45px', paddingTop: '45px' }}>
+    <Grid container spacing={1} className="section" sx={{ paddingBottom: '45px', paddingTop: '45px' }}>
       {/* Title */}
-      <Grid className="section_title" sx={{ marginBottom: '30px' }}>
+      <Grid className="section_title" sx={{ marginBottom: '20px' }}>
         <span></span>
         <h6 className="section_title_text">Portfolio</h6>
       </Grid>
 
       {/* Tabs */}
       <Grid size={{ xs: 12 }}>
-        <Tabs value={tabValue} indicatorColor='white' className='custon_tabs' onChange={(e, newValue) => setTabValue(newValue)}>
-          <Tab label="All" value="All" className={tabValue === "All" ? "customTabs_item active" : "customTabs_item"} />
+        <CustomTabs value={tabValue} onChange={(e, newValue) => setTabValue(newValue)}>
+          <CustomTab label="All" value="All" />
           {[...new Set(resumeData.projects.map(item => item.tag))].map(tag => (
-            <Tab label={tag} value={tag} className={tabValue === "All" ? "customTabs_item active" : "customTabs_item"} />
+            <CustomTab key={tag} label={tag} value={tag} />
           ))}
-        </Tabs>
+        </CustomTabs>
+
       </Grid>
 
       {/* Projects */}
       <Grid size={{ xs: 12 }}>
-        <Grid container spacing={2}>
+        <Grid container spacing={3}>
           {resumeData.projects.map(projects => (
             <>
               {tabValue === projects.tag || tabValue === "All" ?
-                <Grid>
+                <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                   <Grow in timeout={1000}>
-                    <Card className='customCard' onClick={() => setOpenDialog(projects)}>
+                    <CustomCard onClick={() => setOpenDialog(projects)}>
                       <CardActionArea>
-                        <CardMedia className='customCard_image' image={projects.image} title={projects.title} />
+                        <CustomCardMedia image={projects.background} title={projects.title} />
                         <CardContent>
-                          <Typography className='customCard_title'>
+                          <CustomCardTitle variant='body2'>
                             {projects.title}
-                          </Typography>
-                          <Typography className='customCard_description' variant='body2'>
+                          </CustomCardTitle>
+                          <Typography className='customCard_caption' variant='caption' sx={{ color: "gray" }}>
                             {projects.caption}
                           </Typography>
                         </CardContent>
                       </CardActionArea>
-                    </Card>
+                    </CustomCard>
                   </Grow>
                 </Grid>
                 : null}
@@ -61,15 +124,17 @@ const Portfolio = () => {
         <DialogTitle onClose={() => setOpenDialog(false)}>
           {openDialog.title}
         </DialogTitle>
-        <img src="" alt="" />
+        <ProjectDialogImage src={openDialog.background} alt="" />
         <DialogContent>
-          {openDialog.description}
+          <ProjectDialogDescription>
+            {openDialog.description}
+          </ProjectDialogDescription>
         </DialogContent>
-        <DialogActions>
+        <ProjectDialogActions>
           {openDialog?.links?.map(link => (
-            <a href={link.link} target='_blank' rel="noreferrer">{link.icon}</a>
+            <ProjectDialogIcon href={link.link} target='_blank' rel="noreferrer">{link.icon}</ProjectDialogIcon>
           ))}
-        </DialogActions>
+        </ProjectDialogActions>
       </Dialog>
     </Grid>
   )
