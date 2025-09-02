@@ -37,9 +37,9 @@ const resumeData = {
 
   experiences: [
     {
-      title: "Not Found",
-      date: "2005 - 2025",
-      description: "I have not worked anywhere yet, but I am ready to work and learn.",
+      title: "Platonus",
+      date: "01.2025-06.2025",
+      description: "I was an intern at this company for six months. During the first few months, I learned React and the other libraries they used. Later, I started working on various tasks to reinforce my knowledge, and eventually created this React-based portfolio. I also completed several simple yet realistic tasks for the website.",
     },
     {
       title: "Not Found",
@@ -94,7 +94,7 @@ const resumeData = {
   skills: [
     {
       title: "Frontend",
-      description: ["JavaScript", "React", "TypeScript", "Material UI", "Bootstrap"],
+      description: ["JavaScript", "React", "Angular", "TypeScript", "Material UI", "Bootstrap"],
     },
     {
       title: "Backend",

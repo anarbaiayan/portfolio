@@ -51,7 +51,7 @@ const Profile = () => {
           ))}
         </CustomTimeline>
         <div className="btn_container">
-          <a href="/cv.pdf" download style={{ textDecoration: 'none' }} target='_blank' rel="noreferrer">
+          <a href="/Anarbay_ayan.pdf" download style={{ textDecoration: 'none' }} target='_blank' rel="noreferrer">
             <CustomButton text={'Download CV'} icon={<DownloadIcon />} />
           </a>
         </div>

@@ -24,10 +24,10 @@ function App() {
     <Router>
       <Container className={'top_60'}>
         <Grid container spacing={4}>
-          <Grid item size={{ xs: 12, sm: 12, md: 4, lg: 3 }}>
+          <Grid item size={{xs:12, sm:12, md:4, lg:3}} >
             <Profile />
           </Grid>
-          <Grid item size={{ xs: 12, sm: 12, md: 8, lg: 9 }}>
+          <Grid item size={{xs: 12, sm: 12, md: 8, lg: 9}}>
             <Header />
             <MainContent className="container_shadow">
               <Routes>
